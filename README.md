@@ -49,4 +49,4 @@ Revisa siempre un comando antes de ejecutarlo, sobre todo los que usan `sudo` o 
 
 ## 📄 Licencia
 
-Libre para usar, modificar y compartir. Si quieres una licencia formal, añade un archivo `LICENSE` (por ejemplo MIT).
+Libre para usar, modificar y compartir.
