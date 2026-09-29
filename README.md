@@ -2,7 +2,7 @@
 
 Chuleta web, sencilla y minimalista, con los comandos más útiles de **Kubuntu** y **KDE Plasma** organizados por categoría. Cada comando tiene su descripción y un botón para copiarlo directamente.
 
-🌐 **Demo:** https://TU-USUARIO.github.io/kubuntu-comandos/
+🌐 **Demo:** https://marcosgr14.github.io/Comandos-Linux/
 
 ## ✨ Características
 
