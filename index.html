@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Comandos Kubuntu y KDE Plasma</title>
+<style>
+:root{--bg:#f6f7fb;--card:#fff;--tx:#1f2333;--mu:#6b7186;--code:#eef0f7;--bd:#dfe2ee;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14161f;--card:#1c1f2c;--tx:#e8eaf4;--mu:#9aa0b8;--code:#12141c;--bd:#2c3044}}
+:root[data-theme="dark"]{--bg:#14161f;--card:#1c1f2c;--tx:#e8eaf4;--mu:#9aa0b8;--code:#12141c;--bd:#2c3044}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.5 "Trebuchet MS","Segoe UI",system-ui,sans-serif}
+main{max-width:980px;margin:0 auto;padding:28px 16px 60px}
+.banner{display:flex;align-items:center;gap:18px;padding:20px 22px;margin-bottom:22px;border-radius:22px;border:4px solid transparent;background:linear-gradient(var(--card),var(--card)) padding-box,linear-gradient(120deg,#6ea8ff,#c39bff,#ff9fb2,#ffb86b,#7be0b0) border-box}
+.banner svg{width:clamp(72px,16vw,110px);height:auto;flex:none}
+h1{font-size:clamp(1.5rem,4.5vw,2.4rem);margin:0 0 4px;letter-spacing:-.02em;line-height:1.15;background:linear-gradient(100deg,#5b8def,#a77bff 45%,#ff7aa2);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--mu);margin:0}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.tags span{font-size:.8rem;padding:2px 10px;border-radius:99px;border:2px solid var(--c);color:var(--tx)}
+@media(max-width:480px){.banner{flex-direction:column;text-align:center}.tags{justify-content:center}}
+.bar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+input[type=search]{flex:1;min-width:200px;padding:11px 14px;border-radius:12px;border:2px solid var(--bd);background:var(--card);color:var(--tx);font:inherit}
+input:focus,button:focus-visible{outline:3px solid #7c9cff;outline-offset:2px}
+.btn{border:2px solid var(--bd);background:var(--card);color:var(--tx);border-radius:12px;padding:9px 14px;font:inherit;cursor:pointer}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.chip{border:2px solid var(--c);background:transparent;color:var(--tx);border-radius:99px;padding:5px 13px;font:inherit;font-size:.9rem;cursor:pointer}
+.chip.on{background:var(--c);color:#111}
+section{margin-bottom:26px}
+section h2{font-size:1.15rem;margin:0 0 10px;padding-left:10px;border-left:6px solid var(--c)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,430px),1fr));gap:12px}
+.item{background:var(--card);border:2px solid var(--c);border-radius:14px;padding:11px 13px}
+.item p{margin:0 0 8px;color:var(--mu);font-size:.92rem}
+.row{display:flex;gap:8px;align-items:stretch}
+code{flex:1;min-width:0;background:var(--code);border-radius:9px;padding:8px 10px;font:.86rem/1.4 ui-monospace,Consolas,monospace;overflow-x:auto;white-space:pre;user-select:all}
+.cp{border:0;border-radius:9px;background:var(--c);color:#111;padding:0 12px;font:inherit;font-size:.85rem;cursor:pointer;font-weight:700}
+.empty{text-align:center;color:var(--mu);padding:30px}
+.note{background:var(--card);border:2px dashed var(--bd);border-radius:12px;padding:10px 14px;color:var(--mu);font-size:.9rem;margin-bottom:18px}
+</style>
+</head>
+<body>
+<main>
+<header class="banner">
+<svg viewBox="0 0 120 130" role="img" aria-label="Pingüino Tux estilo kawaii">
+<ellipse cx="60" cy="122" rx="34" ry="5" fill="#000" opacity=".12"/>
+<ellipse cx="34" cy="118" rx="16" ry="7" fill="#ffb347"/><ellipse cx="86" cy="118" rx="16" ry="7" fill="#ffb347"/>
+<path d="M60 8C34 8 22 32 22 60c0 30 10 55 38 55s38-25 38-55C98 32 86 8 60 8z" fill="#2b2f45"/>
+<path d="M14 66c-4 14 2 28 10 30 4-10 4-22 2-34-4-2-10 0-12 4z" fill="#2b2f45"/><path d="M106 66c4 14-2 28-10 30-4-10-4-22-2-34 4-2 10 0 12 4z" fill="#2b2f45"/>
+<path d="M60 44c-20 0-30 20-30 42 0 16 10 28 30 28s30-12 30-28c0-22-10-42-30-42z" fill="#fff"/>
+<ellipse cx="46" cy="36" rx="9" ry="11" fill="#fff"/><ellipse cx="74" cy="36" rx="9" ry="11" fill="#fff"/>
+<circle cx="47" cy="38" r="5" fill="#1a1c2b"/><circle cx="73" cy="38" r="5" fill="#1a1c2b"/>
+<circle cx="48.6" cy="36" r="1.7" fill="#fff"/><circle cx="74.6" cy="36" r="1.7" fill="#fff"/>
+<ellipse cx="36" cy="50" rx="5" ry="3" fill="#ff9fb2" opacity=".85"/><ellipse cx="84" cy="50" rx="5" ry="3" fill="#ff9fb2" opacity=".85"/>
+<path d="M50 50c0-5 20-5 20 0 0 6-6 11-10 11s-10-5-10-11z" fill="#ffb347"/>
+<path d="M76 8l4-6 4 6-4 4z" fill="#a77bff" opacity="0"/>
+</svg>
+<div>
+<h1>Comandos Kubuntu y KDE Plasma</h1>
+<p class="sub">Tu chuleta del día a día: toca “Copiar” y pega en Konsole (Ctrl+Shift+V).</p>
+<div class="tags"><span style="--c:#6ea8ff">Kubuntu</span><span style="--c:#c39bff">KDE Plasma</span><span style="--c:#7be0b0">Terminal</span></div>
+</div>
+</header>
+<div class="bar">
+<input type="search" id="q" placeholder="Buscar: apt, plasmashell, wifi, RAM…" aria-label="Buscar comandos">
+<button class="btn" id="ver" title="Cambia entre Plasma 6 (Kubuntu 25.04+) y Plasma 5 (24.04)">Plasma 6</button>
+<button class="btn" id="th">Tema</button>
+</div>
+<div class="chips" id="chips"></div>
+<div class="note">Kubuntu 24.04 usa Plasma 5.27 y Kubuntu 25.10 o posterior usa Plasma 6. El botón “Plasma” ajusta los comandos (kquitapp5/6, kwriteconfig5/6…).</div>
+<div id="out"></div>
+</main>
+<script>
+const D=[
+["Paquetes (APT, Snap, Flatpak)","#6ea8ff",[
+["sudo apt update && sudo apt upgrade -y","Actualiza la lista de paquetes e instala las actualizaciones"],
+["sudo apt install nombre","Instala un paquete"],
+["sudo apt remove nombre && sudo apt autoremove","Desinstala y limpia dependencias sobrantes"],
+["apt search palabra","Busca paquetes por nombre o descripción"],
+["apt list --installed | grep nombre","Comprueba si algo está instalado"],
+["sudo apt full-upgrade","Actualización completa (resuelve cambios de dependencias)"],
+["sudo add-apt-repository ppa:usuario/ppa","Añade un PPA"],
+["flatpak install flathub org.app.Nombre","Instala una app desde Flathub"],
+["flatpak update -y","Actualiza todas las apps Flatpak"],
+["sudo snap refresh","Actualiza los Snap"],
+["sudo apt clean && sudo apt autoclean","Libera la caché de paquetes descargados"],
+["sudo dpkg -i archivo.deb && sudo apt -f install","Instala un .deb y arregla dependencias"]]],
+["Archivos y navegación","#ff9fb2",[
+["ls -lah","Lista con permisos, tamaños legibles y ocultos"],
+["cd -","Vuelve a la carpeta anterior"],
+["find . -iname '*texto*'","Busca archivos por nombre"],
+["grep -rni 'texto' .","Busca texto dentro de archivos, de forma recursiva"],
+["cp -r origen destino","Copia carpetas"],
+["rsync -avh --progress origen/ destino/","Copia con progreso, ideal para respaldos"],
+["tar -czvf salida.tar.gz carpeta/","Comprime una carpeta"],
+["tar -xzvf archivo.tar.gz","Descomprime un .tar.gz"],
+["chmod +x script.sh","Hace ejecutable un script"],
+["sudo chown -R $USER:$USER carpeta","Recupera la propiedad de una carpeta"],
+["ln -s /ruta/real /ruta/enlace","Crea un enlace simbólico"],
+["tree -L 2","Muestra la estructura de carpetas (sudo apt install tree)"]]],
+["Rendimiento y monitoreo","#7be0b0",[
+["btop","Monitor moderno de CPU, RAM, disco y red (sudo apt install btop)"],
+["free -h","Uso de memoria RAM y swap"],
+["df -h","Espacio libre por partición"],
+["ncdu ~","Muestra qué ocupa espacio en disco de forma interactiva"],
+["sudo du -sh /var/* 2>/dev/null | sort -h","Encuentra carpetas pesadas en /var"],
+["journalctl -p 3 -xb","Errores graves del arranque actual"],
+["systemd-analyze blame | head -15","Servicios que más tardan en el arranque"],
+["sensors","Temperaturas (sudo apt install lm-sensors)"],
+["watch -n 2 'sensors | grep -i core'","Vigila la temperatura del CPU en vivo"],
+["sudo sysctl vm.swappiness=10","Usa menos swap (temporal, hasta reiniciar)"],
+["sudo journalctl --vacuum-size=200M","Reduce el tamaño de los logs"],
+["sudo systemctl disable --now NombreServicio","Desactiva un servicio que no usas"],
+["fastfetch","Resumen bonito del sistema (sudo apt install fastfetch)"]]],
+["Plasma Shell (escritorio y panel)","#c39bff",[
+["kquitapp$V plasmashell && kstart plasmashell","Reinicia el panel y el escritorio si se congelan"],
+["systemctl --user restart plasma-plasmashell.service","Reinicio de Plasma mediante systemd"],
+["plasmashell --replace &","Sustituye la sesión de plasmashell en ejecución"],
+["kwin_x11 --replace &","Reinicia KWin (efectos y ventanas) en sesión X11"],
+["kwin_wayland --replace &","Reinicia KWin en sesión Wayland"],
+["kbuildsycoca$V --noincremental","Reconstruye la caché de menús y aplicaciones"],
+["kcmshell$V --list","Lista todos los módulos de Configuración del Sistema"],
+["kcmshell$V kcm_energyinfo","Abre un módulo concreto (energía en este caso)"],
+["kreadconfig$V --file kdeglobals --group General --key ColorScheme","Lee un ajuste de KDE"],
+["kwriteconfig$V --file kdeglobals --group KDE --key SingleClick false","Escribe un ajuste (doble clic para abrir)"],
+["plasma-apply-lookandfeel --list","Lista los temas globales instalados"],
+["plasma-apply-colorscheme --list-schemes","Lista los esquemas de color"],
+["plasma-apply-wallpaperimage /ruta/imagen.jpg","Cambia el fondo de pantalla desde terminal"],
+["qdbus$V org.kde.KWin /KWin org.kde.KWin.showDebugConsole","Abre la consola de depuración de KWin"],
+["kdialog --msgbox 'Hola desde KDE'","Muestra un cuadro de diálogo (útil en scripts)"],
+["spectacle -bno ~/Imágenes/captura.png","Captura de pantalla completa y guardado directo"],
+["rm -rf ~/.cache/plasma* ~/.cache/icon-cache.kcache","Limpia cachés de Plasma (después reinicia plasmashell)"],
+["cp -r ~/.config ~/.config.bak","Respaldo de ajustes antes de probar cambios grandes"]]],
+["Errores típicos y soluciones","#ffb86b",[
+["sudo rm /var/lib/dpkg/lock-frontend /var/lib/apt/lists/lock /var/cache/apt/archives/lock","“Could not get lock”: solo si ningún apt está corriendo (revisa con ps aux | grep apt)"],
+["sudo dpkg --configure -a","“dpkg was interrupted”: termina instalaciones a medias"],
+["sudo apt --fix-broken install","Paquetes rotos o dependencias sin resolver"],
+["sudo apt update --fix-missing","Falla al descargar índices o paquetes"],
+["sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys CLAVE","Error NO_PUBKEY de un repositorio (sustituye CLAVE)"],
+["systemctl --user restart pipewire pipewire-pulse wireplumber","Sin sonido o audio raro"],
+["sudo systemctl restart NetworkManager","Sin red o Wi-Fi que no conecta"],
+["rfkill list && sudo rfkill unblock all","Wi-Fi o Bluetooth bloqueados"],
+["sudo systemctl restart bluetooth","Bluetooth no detecta dispositivos"],
+["sudo update-grub","Windows no aparece en el menú de arranque (con os-prober activo)"],
+["sudo ubuntu-drivers autoinstall","Instala el driver NVIDIA recomendado"],
+["sudo apt install --reinstall kubuntu-desktop","Escritorio dañado o sin paneles tras un fallo"],
+["rm -rf ~/.config/plasma-org.kde.plasma.desktop-appletsrc && kquitapp$V plasmashell && kstart plasmashell","Restablece el panel y los widgets a fábrica"],
+["sudo fsck -f /dev/sdXN","Sistema de archivos con errores (con la partición desmontada, no la raíz montada)"],
+["sudo journalctl -b -1 -p 3","Errores de la sesión anterior, útil tras un cuelgue"]]],
+["Sistema, usuarios y servicios","#6fd6e0",[
+["uname -r && lsb_release -a","Versión del kernel y de Kubuntu"],
+["plasmashell --version","Versión de Plasma instalada"],
+["sudo reboot","Reinicia (sudo poweroff para apagar)"],
+["systemctl status nombre","Estado de un servicio"],
+["sudo systemctl enable --now nombre","Activa y arranca un servicio"],
+["systemctl list-units --failed","Servicios que fallaron"],
+["sudo adduser nombre","Crea un usuario"],
+["sudo usermod -aG sudo nombre","Da permisos de administrador"],
+["lsblk -f","Discos, particiones y sistemas de archivos"],
+["lsusb && lspci | grep -i vga","Dispositivos USB y tarjeta gráfica"],
+["echo $XDG_SESSION_TYPE","Muestra si estás en X11 o Wayland"],
+["crontab -e","Programa tareas automáticas"]]],
+["Red","#f5e27a",[
+["ip a","Direcciones IP de tus interfaces"],
+["nmcli device wifi list","Redes Wi-Fi disponibles"],
+["nmcli device wifi connect SSID password CLAVE","Conecta a una red Wi-Fi"],
+["ping -c 4 8.8.8.8","Comprueba la conexión a internet"],
+["ss -tulpn","Puertos abiertos y qué programa los usa"],
+["curl ifconfig.me","Tu IP pública"],
+["sudo ufw enable && sudo ufw status","Activa y revisa el firewall"],
+["ssh usuario@servidor","Conexión remota"],
+["scp archivo usuario@servidor:/ruta","Copia por SSH"],
+["resolvectl status","Estado del DNS"]]],
+["Terminal pro (innovadores)","#ff8fd1",[
+["sudo apt install zoxide && echo 'eval \"$(zoxide init bash)\"' >> ~/.bashrc","Con `z carpeta` saltas a carpetas usadas con frecuencia"],
+["sudo apt install fzf","Búsqueda difusa: Ctrl+R para historial mejorado"],
+["sudo apt install bat eza ripgrep","Alternativas modernas a cat, ls y grep"],
+["sudo apt install timeshift","Puntos de restauración del sistema, muy recomendable"],
+["sudo apt install tmux","Varias sesiones de terminal, incluso si se cierra la ventana"],
+["sudo apt install kdeconnect","Conecta tu celular: notificaciones, archivos y portapapeles"],
+["history | grep comando","Recupera un comando usado antes"],
+["!!","Repite el último comando (sudo !! lo repite con sudo)"],
+["ctrl + r","Búsqueda en el historial (atajo de teclado)"],
+["alias actualizar='sudo apt update && sudo apt upgrade -y'","Crea un atajo (añádelo a ~/.bashrc para dejarlo fijo)"]]]
+];
+let ver="6",cat="Todos",qs="";
+const $=id=>document.getElementById(id);
+function cp(b,t){const done=()=>{const o=b.textContent;b.textContent="¡Listo!";setTimeout(()=>b.textContent=o,1200)};
+try{navigator.clipboard.writeText(t).then(done,()=>fb(t,done))}catch(e){fb(t,done)}}
+function fb(t,d){const a=document.createElement("textarea");a.value=t;document.body.appendChild(a);a.select();try{document.execCommand("copy")}catch(e){}a.remove();d()}
+function chips(){const c=$("chips");c.innerHTML="";["Todos",...D.map(x=>x[0])].forEach((n,i)=>{const b=document.createElement("button");b.className="chip"+(n===cat?" on":"");const col=i?D[i-1][1]:"#9aa0b8";b.style.setProperty("--c",col);b.textContent=n.split(" (")[0];b.onclick=()=>{cat=n;chips();draw()};c.appendChild(b)})}
+function draw(){const o=$("out");o.innerHTML="";let n=0;
+D.forEach(([t,col,items])=>{if(cat!=="Todos"&&cat!==t)return;
+const f=items.filter(([c,d])=>(c+" "+d+" "+t).toLowerCase().includes(qs));if(!f.length)return;
+const s=document.createElement("section");s.style.setProperty("--c",col);
+s.innerHTML="<h2></h2><div class='grid'></div>";s.querySelector("h2").textContent=t;
+const g=s.querySelector(".grid");
+f.forEach(([c,d])=>{n++;const cmd=c.replace(/\$V/g,ver);const e=document.createElement("div");e.className="item";
+e.innerHTML="<p></p><div class='row'><code></code><button class='cp'>Copiar</button></div>";
+e.querySelector("p").textContent=d;e.querySelector("code").textContent=cmd;
+const b=e.querySelector("button");b.onclick=()=>cp(b,cmd);g.appendChild(e)});
+o.appendChild(s)});
+if(!n)o.innerHTML="<div class='empty'>No hay resultados. Prueba con otra palabra.</div>"}
+$("q").oninput=e=>{qs=e.target.value.toLowerCase().trim();draw()};
+$("ver").onclick=e=>{ver=ver==="6"?"5":"6";e.target.textContent="Plasma "+ver;draw()};
+$("th").onclick=()=>{const r=document.documentElement,dk=matchMedia("(prefers-color-scheme:dark)").matches;const cur=r.dataset.theme||(dk?"dark":"light");r.dataset.theme=cur==="dark"?"light":"dark"};
+chips();draw();
+</script>
+</body>
+</html>
